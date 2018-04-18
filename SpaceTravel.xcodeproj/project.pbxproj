@@ -12,6 +12,11 @@
 		9B265AED2087AAB100DB540B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEB2087AAB100DB540B /* Main.storyboard */; };
 		9B265AEF2087AAB100DB540B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEE2087AAB100DB540B /* Assets.xcassets */; };
 		9B265AF22087AAB100DB540B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AF02087AAB100DB540B /* LaunchScreen.storyboard */; };
+		9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */; };
+		9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */; };
+		9B265AFE2087AB2100DB540B /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFD2087AB2100DB540B /* Asteroid.swift */; };
+		9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFF2087AD8700DB540B /* AsteroidView.swift */; };
+		9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265B012087DB0E00DB540B /* RefreshTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		9B265AEE2087AAB100DB540B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B265AF12087AAB100DB540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B265AF32087AAB100DB540B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidGenerator.swift; sourceTree = "<group>"; };
+		9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidAnimator.swift; sourceTree = "<group>"; };
+		9B265AFD2087AB2100DB540B /* Asteroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
+		9B265AFF2087AD8700DB540B /* AsteroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidView.swift; sourceTree = "<group>"; };
+		9B265B012087DB0E00DB540B /* RefreshTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,11 @@
 			children = (
 				9B265AE72087AAB100DB540B /* AppDelegate.swift */,
 				9B265AE92087AAB100DB540B /* ViewController.swift */,
+				9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */,
+				9B265AFF2087AD8700DB540B /* AsteroidView.swift */,
+				9B265AFD2087AB2100DB540B /* Asteroid.swift */,
+				9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */,
+				9B265B012087DB0E00DB540B /* RefreshTimer.swift */,
 				9B265AEB2087AAB100DB540B /* Main.storyboard */,
 				9B265AEE2087AAB100DB540B /* Assets.xcassets */,
 				9B265AF02087AAB100DB540B /* LaunchScreen.storyboard */,
@@ -138,6 +153,11 @@
 			files = (
 				9B265AEA2087AAB100DB540B /* ViewController.swift in Sources */,
 				9B265AE82087AAB100DB540B /* AppDelegate.swift in Sources */,
+				9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */,
+				9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */,
+				9B265AFE2087AB2100DB540B /* Asteroid.swift in Sources */,
+				9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */,
+				9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
