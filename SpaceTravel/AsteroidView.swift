@@ -17,5 +17,6 @@ class AsteroidView: UIView {
 	private func configuration() {
 		backgroundColor = .white
 		alpha = 0.0
+		isUserInteractionEnabled = false
 	}
 }

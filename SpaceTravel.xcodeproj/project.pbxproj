@@ -17,6 +17,7 @@
 		9B265AFE2087AB2100DB540B /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFD2087AB2100DB540B /* Asteroid.swift */; };
 		9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFF2087AD8700DB540B /* AsteroidView.swift */; };
 		9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265B012087DB0E00DB540B /* RefreshTimer.swift */; };
+		9BBE067220892EE20077AE87 /* ScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE067120892EE20077AE87 /* ScreenConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9B265AFD2087AB2100DB540B /* Asteroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
 		9B265AFF2087AD8700DB540B /* AsteroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidView.swift; sourceTree = "<group>"; };
 		9B265B012087DB0E00DB540B /* RefreshTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimer.swift; sourceTree = "<group>"; };
+		9BBE067120892EE20077AE87 /* ScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				9B265AE72087AAB100DB540B /* AppDelegate.swift */,
 				9B265AE92087AAB100DB540B /* ViewController.swift */,
+				9BBE067120892EE20077AE87 /* ScreenConstants.swift */,
 				9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */,
 				9B265AFF2087AD8700DB540B /* AsteroidView.swift */,
 				9B265AFD2087AB2100DB540B /* Asteroid.swift */,
@@ -156,6 +159,7 @@
 				9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */,
 				9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */,
 				9B265AFE2087AB2100DB540B /* Asteroid.swift in Sources */,
+				9BBE067220892EE20077AE87 /* ScreenConstants.swift in Sources */,
 				9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */,
 				9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */,
 			);

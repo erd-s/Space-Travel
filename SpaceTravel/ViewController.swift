@@ -4,18 +4,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-	let animationDuration: Double = 50
+	let animationDuration: Double = 1
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		view.backgroundColor = .black
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		RefreshTimer.shared.executeEvery(nanoseconds: 1000000000) {
-			self.addAsteroids(number: 3)
+		startAddingAsteroids(number: 2)
+	}
+	
+	func startAddingAsteroids(number: Int) {
+		let oneSecondInNanoseconds = 1_000_000_000
+		RefreshTimer.shared.executeEvery(nanoseconds: oneSecondInNanoseconds) {
+			self.addAsteroids(number: number)
 		}
 	}
 	
@@ -30,15 +34,9 @@ class ViewController: UIViewController {
 	func animateAsteroidsOut(asteroidViews: [AsteroidView]?) {
 		asteroidViews?.forEach { asteroid in
 			AsteroidAnimator.animateAstroidOffScreen(asteroidView: asteroid, duration: animationDuration) {
-				self.clearOut(asteroidViews: asteroidViews)
-			}
-		}
-	}
-	
-	func clearOut(asteroidViews: [AsteroidView]?) {
-		DispatchQueue.main.async {
-			asteroidViews?.forEach {
-				$0.removeFromSuperview()
+				DispatchQueue.main.async {
+					asteroid.removeFromSuperview()
+				}
 			}
 		}
 	}

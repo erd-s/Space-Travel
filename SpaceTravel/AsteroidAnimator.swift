@@ -10,17 +10,17 @@ struct AsteroidAnimator {
 		let direction = getDirectionFromCenter()
 
 		let warpOutAnimation = CABasicAnimation(keyPath: "transform")
-		let identity = asteroidView.layer.transform
-		warpOutAnimation.fromValue = identity
-		
-		let warpOutTranslation = CATransform3DMakeTranslation(direction.dx * 15, direction.dy * 15, 1)
-		warpOutAnimation.toValue = warpOutTranslation
+		warpOutAnimation.fromValue = asteroidView.layer.transform
+		let endTransform = CATransform3DMakeTranslation(direction.dx * 1.1,
+														direction.dy * 1.1,
+														1)
+		warpOutAnimation.toValue = endTransform
 		
 		warpOutAnimation.duration = animationDuration
 		asteroidView.layer.add(warpOutAnimation, forKey: "warpAnimation")
-		asteroidView.layer.transform = warpOutTranslation
+		asteroidView.layer.transform = endTransform
 		
-		UIView.animate(withDuration: animationDuration / 15) {
+		UIView.animate(withDuration: animationDuration / 2) {
 			asteroidView.alpha = 1
 		}
 		
@@ -31,10 +31,12 @@ struct AsteroidAnimator {
 	
 	//MARK: - Update Coordinates
 	private static func getDirectionFromCenter() -> CGVector {
-		let isNegativeX = NSNumber(value: arc4random_uniform(1)).boolValue
-		let isNegativeY = NSNumber(value: arc4random_uniform(1)).boolValue
-		var randomX: CGFloat = CGFloat(arc4random_uniform(1000))
-		var randomY: CGFloat = CGFloat(arc4random_uniform(1000))
+		let isNegativeX = arc4random_uniform(1) == 1 ? true : false
+		let isNegativeY = arc4random_uniform(1) == 1 ? true : false
+
+		var randomX: CGFloat = CGFloat(arc4random_uniform(ScreenConstants.shared.screenWidthUInt32))
+		var randomY: CGFloat = CGFloat(arc4random_uniform(ScreenConstants.shared.screenHeightUInt32))
+		
 		if isNegativeX {
 			randomX = randomX * -1
 		}
@@ -45,11 +47,8 @@ struct AsteroidAnimator {
 		
 		let randomPosition = CGPoint(x: randomX, y: randomY)
 		
-		let startingPoint = CGPoint(x: UIScreen.main.bounds.width / 2,
-									y: UIScreen.main.bounds.height / 2)
-		
-		let dx = randomPosition.x - startingPoint.x
-		let dy = randomPosition.y - startingPoint.y
+		let dx = randomPosition.x - ScreenConstants.shared.screenCenter.x
+		let dy = randomPosition.y - ScreenConstants.shared.screenCenter.y
 		return CGVector(dx: dx, dy: dy)
 	}
 }
