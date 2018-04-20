@@ -6,7 +6,13 @@ import Foundation
 
 class RefreshTimer {
 	static let shared = RefreshTimer()
-	private var shouldStopExecutions: Bool = false
+	private var shouldStopExecutions: Bool = false {
+		didSet {
+			if shouldStopExecutions {
+				self.killTimer()
+			}
+		}
+	}
 	private var timer: DispatchSourceTimer?
 	
 	init() {
@@ -17,10 +23,6 @@ class RefreshTimer {
 	func executeEvery(nanoseconds: Int, work: @escaping ()->()) {
 		makeTimerIfNecessary()
 		timer?.setEventHandler(qos: .userInitiated, flags: []) {
-			guard self.shouldStopExecutions == false else {
-				self.killTimer()
-				return
-			}
 			work()
 		}
 		timer?.schedule(deadline: .now(),
@@ -41,7 +43,7 @@ class RefreshTimer {
 		}
 	}
 	
-	func killTimer() {
+	private func killTimer() {
 		timer?.cancel()
 		timer = nil
 	}

@@ -5,6 +5,8 @@ import UIKit
 
 class ViewController: UIViewController {
 	let animationDuration: Double = 1
+	var numberOfStarsExisting: Int = 0
+	var maxNumberOfStars: Int = 100
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,6 +21,11 @@ class ViewController: UIViewController {
 	func startAddingAsteroids(number: Int) {
 		let oneSecondInNanoseconds = 1_000_000_000
 		RefreshTimer.shared.executeEvery(nanoseconds: oneSecondInNanoseconds) {
+			guard self.maxNumberOfStars >= self.numberOfStarsExisting else {
+				RefreshTimer.shared.stopAllExecutions()
+				return
+			}
+			self.numberOfStarsExisting += number
 			self.addAsteroids(number: number)
 		}
 	}
