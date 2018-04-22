@@ -20,14 +20,18 @@ class RefreshTimer {
 	}
 	
 	//MARK - Scheduler
-	func executeEvery(nanoseconds: Int, work: @escaping ()->()) {
+	func executeEvery(milliseconds: Int, work: @escaping ()->()) {
 		makeTimerIfNecessary()
 		timer?.setEventHandler(qos: .userInitiated, flags: []) {
+			guard self.shouldStopExecutions == false else {
+				self.killTimer()
+				return
+			}
 			work()
 		}
 		timer?.schedule(deadline: .now(),
-						repeating: DispatchTimeInterval.milliseconds(16),
-						leeway: DispatchTimeInterval.milliseconds(5))
+						repeating: DispatchTimeInterval.milliseconds(milliseconds),
+						leeway: DispatchTimeInterval.milliseconds(milliseconds/3))
 		
 		timer?.resume()
 	}

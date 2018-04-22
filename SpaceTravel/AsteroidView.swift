@@ -4,6 +4,8 @@
 import UIKit
 
 class AsteroidView: UIView {
+	var readyToReanimate = false
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		configuration()
@@ -13,10 +15,11 @@ class AsteroidView: UIView {
 		super.init(coder: aDecoder)
 		configuration()
 	}
-	
+
 	private func configuration() {
 		backgroundColor = .white
-		alpha = 0.0
+		layer.opacity = 0
+		layer.cornerRadius = frame.width / 2
 		isUserInteractionEnabled = false
 	}
 }
