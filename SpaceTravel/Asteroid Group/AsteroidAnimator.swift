@@ -1,5 +1,5 @@
 //  Created by Chris Erdos on 4/18/18.
-//  Copyright © 2018 GPShopper. All rights reserved.
+//  Copyright © 2018 Christopher Erdos. All rights reserved.
 
 import Foundation
 import UIKit

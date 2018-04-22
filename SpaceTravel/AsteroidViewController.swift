@@ -1,9 +1,9 @@
 //  Created by Chris Erdos on 4/18/18.
-//  Copyright © 2018 GPShopper. All rights reserved.
+//  Copyright © 2018 Christopher Erdos. All rights reserved.
 
 import UIKit
 
-class ViewController: UIViewController {
+class AsteroidViewController: UIViewController {
 	let animationDuration: Double = 3
 	var maxNumberOfStars: Int = 1000
 	var reuseAsteroidViews: [AsteroidView] = []
@@ -19,12 +19,12 @@ class ViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		startAddingAsteroids(number: 2)
+		let msFor60fps: Int = 17
+		startAddAsteroidTimerAdding(numberOfAsteroids: 2, every: msFor60fps)
 	}
 	
-	func startAddingAsteroids(number: Int) {
-		let msFor60fps: Int = 17
-		RefreshTimer.shared.executeEvery(milliseconds: msFor60fps) {
+	func startAddAsteroidTimerAdding(numberOfAsteroids number: Int, every ms: Int) {
+		RefreshTimer.shared.executeEvery(ms: ms) {
 			if self.shouldContinueCreatingAsteroids {
 				self.createAsteroids(number: number)
 			} else {
@@ -33,6 +33,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
+
 	func restartAnimationOnAsteroids(number: Int) {
 		let startIndex = self.asteroidViewsAnimationIndex
 		let endIndex = startIndex + number - 1

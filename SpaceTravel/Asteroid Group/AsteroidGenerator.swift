@@ -1,5 +1,5 @@
 //  Created by Chris Erdos on 4/18/18.
-//  Copyright © 2018 GPShopper. All rights reserved.
+//  Copyright © 2018 Christopher Erdos. All rights reserved.
 
 import Foundation
 import UIKit
@@ -11,11 +11,7 @@ struct AsteroidGenerator {
 		var asteroidViews: [AsteroidView] = []
 		
 		asteroids.forEach { asteroid in
-		    let asteroidFrame = CGRect(x: asteroid.position.x,
-									   y: asteroid.position.y,
-									   width: asteroid.radius,
-									   height: asteroid.radius)
-		    let asteroidView = AsteroidView(frame: asteroidFrame)
+			let asteroidView = AsteroidView(asteroid: asteroid)
 			asteroidViews.append(asteroidView)
 		}
 		
@@ -28,7 +24,7 @@ struct AsteroidGenerator {
 			let position = CGPoint(x: UIScreen.main.bounds.midX,
 									  y: UIScreen.main.bounds.midY)
 		
-			let randomRadius: CGFloat = CGFloat(arc4random_uniform(500)) / 100.0
+			let randomRadius: CGFloat = CGFloat(arc4random_uniform(6000)) / 1000.0
 		
 			let asteroid = Asteroid(radius: randomRadius, position: position)
 			asteroids.append(asteroid)

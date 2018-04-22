@@ -1,5 +1,5 @@
 //  Created by Chris Erdos on 4/17/18.
-//  Copyright © 2018 GPShopper. All rights reserved.
+//  Copyright © 2018 Christopher Erdos. All rights reserved.
 
 import Foundation
 
@@ -16,12 +16,12 @@ class RefreshTimer {
 	private var timer: DispatchSourceTimer?
 	
 	init() {
-		makeTimerIfNecessary()
+		resetConfiguration()
 	}
 	
 	//MARK - Scheduler
-	func executeEvery(milliseconds: Int, work: @escaping ()->()) {
-		makeTimerIfNecessary()
+	func executeEvery(ms: Int, work: @escaping ()->()) {
+		resetConfiguration()
 		timer?.setEventHandler(qos: .userInitiated, flags: []) {
 			guard self.shouldStopExecutions == false else {
 				self.killTimer()
@@ -30,8 +30,8 @@ class RefreshTimer {
 			work()
 		}
 		timer?.schedule(deadline: .now(),
-						repeating: DispatchTimeInterval.milliseconds(milliseconds),
-						leeway: DispatchTimeInterval.milliseconds(milliseconds/3))
+						repeating: DispatchTimeInterval.milliseconds(ms),
+						leeway: DispatchTimeInterval.milliseconds(ms/3))
 		
 		timer?.resume()
 	}
@@ -41,10 +41,11 @@ class RefreshTimer {
 	}
 	
 	//MARK: - Timer
-	func makeTimerIfNecessary() {
+	func resetConfiguration() {
 		if timer == nil {
 			timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
 		}
+		shouldStopExecutions = false
 	}
 	
 	private func killTimer() {
