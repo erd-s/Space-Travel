@@ -22,25 +22,26 @@ class DefaultButtonsTableViewCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
+		
 		setDefaultButton.layer.cornerRadius = 5
 		resetDefaultButton.layer.cornerRadius = 5
 	}
 	
 	@IBAction func setDefaultButtonTapped(_ sender: UIButton) {
-		sender.setTitle("Default Set Successfully!", for: .normal)
+		sender.setTitle("success", for: .normal)
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-			sender.setTitle("Set Default", for: .normal)
+			sender.setTitle("set default", for: .normal)
 		}
 		
 		delegate?.tappedSetDefault()
 	}
 	
 	@IBAction func resetDefaultButtonTapped(_ sender: UIButton) {
-		sender.setTitle("Reset Successful!", for: .normal)
+		sender.setTitle("success", for: .normal)
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-			sender.setTitle("Reset Defaults", for: .normal)
+			sender.setTitle("reset defaults", for: .normal)
 		}
 		
 		delegate?.tappedResetDefault()

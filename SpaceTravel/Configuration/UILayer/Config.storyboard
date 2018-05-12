@@ -166,20 +166,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NHX-Er-CUv">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NHX-Er-CUv">
                                                     <rect key="frame" x="18" y="14" width="339" height="32"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS8-d2-rWI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="32"/>
-                                                            <state key="normal" title="Set Default"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="165.5" height="32"/>
+                                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <state key="normal" title="set default">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="setDefaultButtonTapped:" destination="WTS-JX-a2M" eventType="touchUpInside" id="Gew-yd-kSP"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2Z-c6-nrA">
-                                                            <rect key="frame" x="171" y="0.0" width="168" height="32"/>
+                                                            <rect key="frame" x="173.5" y="0.0" width="165.5" height="32"/>
                                                             <color key="backgroundColor" red="0.92935490610000004" green="0.37416871219999998" blue="0.25269871560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <state key="normal" title="Reset Default">
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <state key="normal" title="reset default">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -210,7 +215,7 @@
                                     <constraint firstAttribute="height" constant="40" id="iNN-do-KXw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                <state key="normal" title="Save">
+                                <state key="normal" title="save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -231,7 +236,8 @@
                         <viewLayoutGuide key="safeArea" id="Kz2-7P-9sV"/>
                     </view>
                     <navigationItem key="navigationItem" id="iUE-o5-jHl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mZ4-yQ-xMC">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="mZ4-yQ-xMC">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="Vzm-pn-Wbu" id="Nca-dp-1sp"/>
                             </connections>
