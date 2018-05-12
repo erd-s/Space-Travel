@@ -30,7 +30,7 @@ class DefaultButtonsTableViewCell: UITableViewCell {
 	@IBAction func setDefaultButtonTapped(_ sender: UIButton) {
 		sender.setTitle("success", for: .normal)
 		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 			sender.setTitle("set default", for: .normal)
 		}
 		
@@ -40,7 +40,7 @@ class DefaultButtonsTableViewCell: UITableViewCell {
 	@IBAction func resetDefaultButtonTapped(_ sender: UIButton) {
 		sender.setTitle("success", for: .normal)
 		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 			sender.setTitle("reset defaults", for: .normal)
 		}
 		
