@@ -54,4 +54,8 @@ extension ConfigViewController: ConfigDataSourceDelegate {
 	func didUpdateConfig(config: Config) {
 		self.config = config
 	}
+	
+	func shouldDismiss() {
+		exitConfig()
+	}
 }

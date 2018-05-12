@@ -21,7 +21,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="XsM-fz-9KK" kind="presentation" identifier="openConfig" id="jBA-LQ-ELQ"/>
+                        <segue destination="XsM-fz-9KK" kind="presentation" identifier="openConfig" modalTransitionStyle="crossDissolve" id="jBA-LQ-ELQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

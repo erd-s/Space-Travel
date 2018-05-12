@@ -10,12 +10,13 @@ class AsteroidViewController: UIViewController {
 	var shouldContinueCreatingAsteroids: Bool {
 		return reuseAsteroidViews.count < config.maxNumberOfAsteroids
 	}
-	var config = Defaults.shared.config
+	var config: Config = Config()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .black
 		addLongPressToOpenConfig()
+		config = Defaults.shared.config
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {

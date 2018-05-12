@@ -13,13 +13,15 @@ class Defaults {
 	static let shared = Defaults()
 	private let kMaxSize: String = "maxSize"
 	private let kMaxNumber: String = "maxNumber"
+	private let kAreDefaultsSet: String = "areDefaultsSet"
+	
+	var areDefaultsSet: Bool {
+		return UserDefaults.standard.bool(forKey: kAreDefaultsSet)
+	}
 	
 	var config: Config {
 		get {
-			return getConfigFromDefaults()
-		}
-		set {
-			setDefaultsFromConfig(newValue)
+			return areDefaultsSet ? getConfigFromDefaults() : Config()
 		}
 	}
 	
@@ -51,7 +53,7 @@ class Defaults {
 		return config
 	}
 	
-	private func setDefaultsFromConfig(_ config: Config) {
+	func setConfig(_ config: Config) {
 		UserDefaults.standard.set(config.asteroidColor.components.red,
 								  forKey: getAsteroidColorKey(component: "r"))
 		UserDefaults.standard.set(config.asteroidColor.components.green,
@@ -68,6 +70,7 @@ class Defaults {
 		
 		UserDefaults.standard.set(Float(config.asteroidMaxSize), forKey: kMaxSize)
 		UserDefaults.standard.set(config.maxNumberOfAsteroids, forKey: kMaxNumber)
+		UserDefaults.standard.set(true, forKey: kAreDefaultsSet)
 	}
 	
 	private func getAsteroidColorKey(component: String) -> String {

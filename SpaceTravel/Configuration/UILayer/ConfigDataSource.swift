@@ -11,6 +11,7 @@ import UIKit
 
 protocol ConfigDataSourceDelegate: class {
 	func didUpdateConfig(config: Config)
+	func shouldDismiss()
 }
 
 class ConfigDataSource: NSObject, UITableViewDataSource {
@@ -96,13 +97,14 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 
 extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegate, DefaultsButtonCellDelegate {
 	func tappedSetDefault() {
-		Defaults.shared.config = self.config
+		Defaults.shared.setConfig(config)
+		delegate?.shouldDismiss()
 	}
 	
 	func tappedResetDefault() {
 		self.config = Config()
 		tableView.reloadData()
-		Defaults.shared.config = Config()
+		Defaults.shared.setConfig(config)
 	}
 	
 	func sliderDidUpdateValue(_ value: Float, sender: SingleSliderTableViewCell) {
