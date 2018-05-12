@@ -9,47 +9,6 @@
 import Foundation
 import UIKit
 
-private enum Section: Int {
-	case asteroidColor
-	case backgroundColor
-	case duration
-	case size
-	case number
-	
-	init?(header: String) {
-		for section in Section.all() {
-			if section.getHeader() == header {
-				self = section
-			}
-		}
-		
-		return nil
-	}
-	
-	func getHeader() -> String {
-		switch self {
-		case .asteroidColor:
-			return "asteroid color"
-		case .backgroundColor:
-			return "background color"
-		case .duration:
-			return "animation duration"
-		case .size:
-			return "size"
-		case .number:
-			return "max number"
-		}
-	}
-	
-	static func all() -> [Section] {
-		return [.asteroidColor,
-				.backgroundColor,
-				.duration,
-				.size,
-				.number]
-	}
-}
-
 protocol ConfigDataSourceDelegate: class {
 	func didUpdateConfig(config: Config)
 }
@@ -77,19 +36,20 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 		guard let section = Section(rawValue: indexPath.section) else { return UITableViewCell() }
 		
 		switch section {
-		case .asteroidColor,
-			 .backgroundColor:
-			return configureForColor(tableView: tableView, section: section)
+		case .asteroidColor:
+			return configureForColor(tableView: tableView, section: section, color: config.asteroidColor)
+		case .backgroundColor:
+			return configureForColor(tableView: tableView, section: section, color: config.backgroundColor)
 		case .duration, .size, .number:
 			return configureForSingleSlider(tableView: tableView, section: section)
 		}
 	}
 	
 	
-	private func configureForColor(tableView: UITableView, section: Section) -> UITableViewCell {
+	private func configureForColor(tableView: UITableView, section: Section, color: UIColor) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ColorSelectionTableViewCell.reuseID) as! ColorSelectionTableViewCell
 		
-		cell.configure(headerText: section.getHeader(), delegate: self)
+		cell.configure(headerText: section.getHeader(), delegate: self, color: color)
 		
 		return cell
 	}
@@ -162,9 +122,43 @@ extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegat
 	}
 }
 
-
-
-
-
-
-
+private enum Section: Int {
+	case asteroidColor
+	case backgroundColor
+	case duration
+	case size
+	case number
+	
+	init?(header: String) {
+		for section in Section.all() {
+			if section.getHeader() == header {
+				self = section
+			}
+		}
+		
+		return nil
+	}
+	
+	func getHeader() -> String {
+		switch self {
+		case .asteroidColor:
+			return "asteroid color"
+		case .backgroundColor:
+			return "background color"
+		case .duration:
+			return "animation duration"
+		case .size:
+			return "size"
+		case .number:
+			return "max number"
+		}
+	}
+	
+	static func all() -> [Section] {
+		return [.asteroidColor,
+				.backgroundColor,
+				.duration,
+				.size,
+				.number]
+	}
+}

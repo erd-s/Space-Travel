@@ -11,10 +11,12 @@ class AsteroidViewController: UIViewController {
 	var shouldContinueCreatingAsteroids: Bool {
 		return reuseAsteroidViews.count < maxNumberOfStars
 	}
+	var config = Config()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .black
+		addLongPressToOpenConfig()
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +68,32 @@ class AsteroidViewController: UIViewController {
 	func animateAsteroidsOut(asteroidViews: [AsteroidView]?) {
 		asteroidViews?.forEach { asteroid in
 			AsteroidAnimator.shared.animateAstroidOffScreen(asteroidView: asteroid, duration: animationDuration)
+		}
+	}
+}
+
+//MARK: Configuration
+extension AsteroidViewController: ConfigViewControllerDelegate, UIGestureRecognizerDelegate {
+	func addLongPressToOpenConfig() {
+		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(openConfig))
+		longPress.delegate = self
+		view.addGestureRecognizer(longPress)
+	}
+		
+	@objc func openConfig() {
+		RefreshTimer.shared.stopAllExecutions()
+		performSegue(withIdentifier: "openConfig", sender: self)
+	}
+	
+	func didSaveConfig(_ config: Config) {
+		self.config = config
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let navController = segue.destination as? UINavigationController,
+			let dvc = navController.topViewController as? ConfigViewController {
+			dvc.config = self.config
+			dvc.delegate = self
 		}
 	}
 }

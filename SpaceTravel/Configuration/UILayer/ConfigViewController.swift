@@ -13,8 +13,8 @@ protocol ConfigViewControllerDelegate: class {
 }
 
 class ConfigViewController: UIViewController {
-	var configDataSource: ConfigDataSource?
 	var config: Config?
+	var dataSource: ConfigDataSource?
 	weak var delegate: ConfigViewControllerDelegate?
 	
 	@IBOutlet weak var configTableView: UITableView!
@@ -26,13 +26,13 @@ class ConfigViewController: UIViewController {
 	
 	func setup() {
 		guard let config = config else { return }
-		configDataSource = ConfigDataSource(config: config, tableView: configTableView, delegate: self)
+		dataSource = ConfigDataSource(config: config, tableView: configTableView, delegate: self)
+		configTableView.dataSource = dataSource
 		configTableView.tableFooterView = UIView()
+		configTableView.reloadData()
 	}
-
 	
-	//MARK: - Actions
-	
+	//MARK: - Actions	
 	@IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
 		exitConfig()
 	}

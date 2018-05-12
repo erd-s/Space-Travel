@@ -26,7 +26,7 @@ class SingleSliderTableViewCell: UITableViewCell {
 		slider.minimumValue = sliderConfig.min
 		slider.value = sliderConfig.value
 		
-		
+		self.headerLabel.text = headerText
 		self.delegate = delegate
 	}
 	

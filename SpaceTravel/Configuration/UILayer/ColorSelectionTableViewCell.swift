@@ -29,9 +29,15 @@ class ColorSelectionTableViewCell: UITableViewCell {
 		setupForSliders()
 	}
 	
-	func configure(headerText: String, delegate: ColorSelectionDelegate?) {
+	func configure(headerText: String, delegate: ColorSelectionDelegate?, color: UIColor) {
 		self.headerLabel.text = headerText
 		self.delegate = delegate
+		
+		self.colorView.backgroundColor = color
+		
+		self.redSlider.value = Float(color.components.red)
+		self.blueSlider.value = Float(color.components.blue)
+		self.greenSlider.value = Float(color.components.green)
 	}
 	
 	func setupForSliders() {
@@ -44,9 +50,9 @@ class ColorSelectionTableViewCell: UITableViewCell {
 	}
 	
 	@IBAction func sliderValueChanged(_ sender: UISlider) {
-		let r = 1 / CGFloat(redSlider.value)
-		let g = 1 / CGFloat(greenSlider.value)
-		let b = 1 / CGFloat(blueSlider.value)
+		let r = CGFloat(redSlider.value) / 255
+		let g = CGFloat(greenSlider.value) / 255
+		let b = CGFloat(blueSlider.value) / 255
 		
 		let color = UIColor(red: r,
 							green: g,

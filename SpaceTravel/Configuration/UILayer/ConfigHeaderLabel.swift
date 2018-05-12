@@ -13,6 +13,6 @@ class ConfigHeaderLabel: UILabel {
 		super.init(coder: aDecoder)
 		
 		font = UIFont(name: "Menlo", size: 15)
-		text = text?.uppercased()
+		text = text?.lowercased()
 	}
 }
