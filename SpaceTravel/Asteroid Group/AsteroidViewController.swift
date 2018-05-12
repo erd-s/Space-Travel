@@ -5,11 +5,10 @@ import UIKit
 
 class AsteroidViewController: UIViewController {
 	let animationDuration: Double = 3
-	var maxNumberOfStars: Int = 1000
 	var reuseAsteroidViews: [AsteroidView] = []
 	var asteroidViewsAnimationIndex: Int = 0
 	var shouldContinueCreatingAsteroids: Bool {
-		return reuseAsteroidViews.count < maxNumberOfStars
+		return reuseAsteroidViews.count < config.maxNumberOfAsteroids
 	}
 	var config = Config()
 	
@@ -23,6 +22,14 @@ class AsteroidViewController: UIViewController {
 		super.viewDidAppear(animated)
 		let msFor60fps: Int = 17
 		startAddAsteroidTimerAdding(numberOfAsteroids: 2, every: msFor60fps)
+		UIView.animate(withDuration: 0.3) {
+			self.view.backgroundColor = self.config.backgroundColor
+		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		reset()
 	}
 	
 	func startAddAsteroidTimerAdding(numberOfAsteroids number: Int, every ms: Int) {
@@ -51,13 +58,15 @@ class AsteroidViewController: UIViewController {
 		animateAsteroidsOut(asteroidViews: viewsToAnimate)
 		asteroidViewsAnimationIndex += number
 		
-		if asteroidViewsAnimationIndex >= maxNumberOfStars {
+		if asteroidViewsAnimationIndex >= config.maxNumberOfAsteroids {
 			asteroidViewsAnimationIndex = 0
 		}
 	}
 	
 	func createAsteroids(number: Int) {
-		let asteroidViews = AsteroidGenerator.createAsteroidViews(number: number)
+		let asteroidViews = AsteroidGenerator.createAsteroidViews(number: number,
+																  color: config.asteroidColor,
+																  maxSize: config.asteroidMaxSize)
 		asteroidViews.forEach {
 			self.view.addSubview($0)
 			self.reuseAsteroidViews.append($0)
@@ -67,8 +76,15 @@ class AsteroidViewController: UIViewController {
 
 	func animateAsteroidsOut(asteroidViews: [AsteroidView]?) {
 		asteroidViews?.forEach { asteroid in
-			AsteroidAnimator.shared.animateAstroidOffScreen(asteroidView: asteroid, duration: animationDuration)
+			AsteroidAnimator.shared.animateAstroidOffScreen(asteroidView: asteroid,
+															duration: animationDuration)
 		}
+	}
+	
+	func reset() {
+		RefreshTimer.shared.stopAllExecutions()
+		reuseAsteroidViews.removeAll()
+		asteroidViewsAnimationIndex = 0
 	}
 }
 
@@ -81,7 +97,6 @@ extension AsteroidViewController: ConfigViewControllerDelegate, UIGestureRecogni
 	}
 		
 	@objc func openConfig() {
-		RefreshTimer.shared.stopAllExecutions()
 		performSegue(withIdentifier: "openConfig", sender: self)
 	}
 	

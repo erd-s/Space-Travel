@@ -11,27 +11,27 @@ struct Asteroid {
 class AsteroidView: UIView {
 	var readyToReanimate = false
 	
-	init(asteroid: Asteroid) {
+	init(asteroid: Asteroid, color: UIColor) {
 		let asteroidFrame = CGRect(x: asteroid.position.x,
 								   y: asteroid.position.y,
 								   width: asteroid.radius,
 								   height: asteroid.radius)
 		super.init(frame: asteroidFrame)
-		configuration()
+		configuration(color: color)
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		configuration()
+		configuration(color: backgroundColor)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		configuration()
+		configuration(color: backgroundColor)
 	}
 
-	private func configuration() {
-		backgroundColor = .white
+	private func configuration(color: UIColor?) {
+		backgroundColor = color
 		layer.opacity = 0
 		layer.cornerRadius = frame.width / 2
 		isUserInteractionEnabled = false

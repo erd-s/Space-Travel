@@ -40,7 +40,7 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 			return configureForColor(tableView: tableView, section: section, color: config.asteroidColor)
 		case .backgroundColor:
 			return configureForColor(tableView: tableView, section: section, color: config.backgroundColor)
-		case .duration, .size, .number:
+		case .size, .number:
 			return configureForSingleSlider(tableView: tableView, section: section)
 		}
 	}
@@ -66,10 +66,6 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 	
 	private func getConfigForSingleSliderSection(section: Section) -> SliderConfig? {
 		switch section {
-		case .duration:
-			return SliderConfig(min: Config.getDurationMinMax().min,
-										max: Config.getDurationMinMax().max,
-										value: Float(config.animationDuration))
 		case .size:
 			return SliderConfig(min: Config.getAsteroidSizeMinMax().min,
 										max: Config.getAsteroidSizeMinMax().max,
@@ -94,8 +90,6 @@ extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegat
 		}
 		
 		switch section {
-		case .duration:
-			config.animationDuration = Double(value)
 		case .size:
 			config.asteroidMaxSize = CGFloat(value)
 		case .number:
@@ -125,7 +119,6 @@ extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegat
 private enum Section: Int {
 	case asteroidColor
 	case backgroundColor
-	case duration
 	case size
 	case number
 	
@@ -145,8 +138,6 @@ private enum Section: Int {
 			return "asteroid color"
 		case .backgroundColor:
 			return "background color"
-		case .duration:
-			return "animation duration"
 		case .size:
 			return "size"
 		case .number:
@@ -157,7 +148,6 @@ private enum Section: Int {
 	static func all() -> [Section] {
 		return [.asteroidColor,
 				.backgroundColor,
-				.duration,
 				.size,
 				.number]
 	}
