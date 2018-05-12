@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-2a-svm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-2a-svm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -157,6 +157,48 @@
                                             <outlet property="greenSlider" destination="9zR-gg-cV1" id="a5w-aM-zo8"/>
                                             <outlet property="headerLabel" destination="Gwv-CP-0mK" id="B3h-uN-Z8z"/>
                                             <outlet property="redSlider" destination="oEk-i4-zvM" id="vuk-0S-acv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultButtons" rowHeight="60" id="WTS-JX-a2M" customClass="DefaultButtonsTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="340.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WTS-JX-a2M" id="OX2-bk-nWB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NHX-Er-CUv">
+                                                    <rect key="frame" x="18" y="14" width="339" height="32"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS8-d2-rWI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="32"/>
+                                                            <state key="normal" title="Set Default"/>
+                                                            <connections>
+                                                                <action selector="setDefaultButtonTapped:" destination="WTS-JX-a2M" eventType="touchUpInside" id="Gew-yd-kSP"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2Z-c6-nrA">
+                                                            <rect key="frame" x="171" y="0.0" width="168" height="32"/>
+                                                            <color key="backgroundColor" red="0.92935490610000004" green="0.37416871219999998" blue="0.25269871560000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <state key="normal" title="Reset Default">
+                                                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="resetDefaultButtonTapped:" destination="WTS-JX-a2M" eventType="touchUpInside" id="YyW-Yq-UJ0"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NHX-Er-CUv" firstAttribute="leading" secondItem="OX2-bk-nWB" secondAttribute="leadingMargin" constant="3" id="Pm5-la-d4f"/>
+                                                <constraint firstItem="NHX-Er-CUv" firstAttribute="top" secondItem="OX2-bk-nWB" secondAttribute="topMargin" constant="3" id="tPs-D9-CHE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NHX-Er-CUv" secondAttribute="bottom" constant="3" id="ycJ-wd-zSz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NHX-Er-CUv" secondAttribute="trailing" constant="3" id="zSv-IC-Hm1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="resetDefaultButton" destination="U2Z-c6-nrA" id="PGK-ON-BO6"/>
+                                            <outlet property="setDefaultButton" destination="AS8-d2-rWI" id="jwT-N2-Csx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

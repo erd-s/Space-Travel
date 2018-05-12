@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C088AB120A7656C00C77DFB /* DefaultButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C088AB020A7656C00C77DFB /* DefaultButtonsTableViewCell.swift */; };
 		0CB09A6D20A7353900996663 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A6C20A7353900996663 /* Config.swift */; };
 		0CB09A7020A736CC00996663 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A6E20A736CC00996663 /* ConfigViewController.swift */; };
 		0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7220A738B100996663 /* ConfigDataSource.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C088AB020A7656C00C77DFB /* DefaultButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		0CB09A6C20A7353900996663 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		0CB09A6E20A736CC00996663 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		0CB09A7220A738B100996663 /* ConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDataSource.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0CB09A7420A738DF00996663 /* Config.storyboard */,
+				0C088AB020A7656C00C77DFB /* DefaultButtonsTableViewCell.swift */,
 				0CB09A6E20A736CC00996663 /* ConfigViewController.swift */,
 				0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */,
 				0CB09A7220A738B100996663 /* ConfigDataSource.swift */,
@@ -227,6 +230,7 @@
 				0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */,
 				0CB09A8020A7519700996663 /* UIColor+Components.swift in Sources */,
 				0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */,
+				0C088AB120A7656C00C77DFB /* DefaultButtonsTableViewCell.swift in Sources */,
 				0CB09A8220A75B7000996663 /* Float+RoundTo.swift in Sources */,
 				0CB09A8520A75D3F00996663 /* Defaults.swift in Sources */,
 				0CB09A7720A73BC400996663 /* ColorSelectionTableViewCell.swift in Sources */,

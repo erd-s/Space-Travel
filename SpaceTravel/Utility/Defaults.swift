@@ -60,11 +60,11 @@ class Defaults {
 								  forKey: getAsteroidColorKey(component: "b"))
 		
 		UserDefaults.standard.set(config.backgroundColor.components.red,
-								  forKey: getAsteroidColorKey(component: "r"))
+								  forKey: getBackgroundColorKey(component: "r"))
 		UserDefaults.standard.set(config.backgroundColor.components.green,
-								  forKey: getAsteroidColorKey(component: "g"))
+								  forKey: getBackgroundColorKey(component: "g"))
 		UserDefaults.standard.set(config.backgroundColor.components.blue,
-								  forKey: getAsteroidColorKey(component: "b"))
+								  forKey: getBackgroundColorKey(component: "b"))
 		
 		UserDefaults.standard.set(Float(config.asteroidMaxSize), forKey: kMaxSize)
 		UserDefaults.standard.set(config.maxNumberOfAsteroids, forKey: kMaxNumber)

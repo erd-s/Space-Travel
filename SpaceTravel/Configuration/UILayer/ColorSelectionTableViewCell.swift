@@ -43,10 +43,15 @@ class ColorSelectionTableViewCell: UITableViewCell {
 	func setup() {
 		redSlider.minimumValue = 1
 		redSlider.maximumValue = 255
+		redSlider.minimumTrackTintColor = .red
+		
 		greenSlider.minimumValue = 1
 		greenSlider.maximumValue = 255
+		greenSlider.minimumTrackTintColor = .green
+		
 		blueSlider.minimumValue = 1
 		blueSlider.maximumValue = 255
+		blueSlider.minimumTrackTintColor = .blue
 		
 		colorView.layer.borderColor = UIColor.black.cgColor.copy(alpha: 0.5)
 		colorView.layer.borderWidth = 0.5

@@ -42,6 +42,8 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 			return configureForColor(tableView: tableView, section: section, color: config.backgroundColor)
 		case .size, .number:
 			return configureForSingleSlider(tableView: tableView, section: section)
+		case .defaults:
+			return configureForDefaultsButtons(tableView: tableView)
 		}
 	}
 	
@@ -64,6 +66,12 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 		return cell
 	}
 	
+	private func configureForDefaultsButtons(tableView: UITableView) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: DefaultButtonsTableViewCell.reuseID) as! DefaultButtonsTableViewCell
+		cell.delegate = self
+		return cell
+	}
+	
 	private func getConfigForSingleSliderSection(section: Section) -> SliderConfig? {
 		switch section {
 		case .size:
@@ -82,9 +90,21 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 		
 		return nil
 	}
+	
+	
 }
 
-extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegate {
+extension ConfigDataSource: ColorSelectionDelegate, SingleSliderSelectionDelegate, DefaultsButtonCellDelegate {
+	func tappedSetDefault() {
+		Defaults.shared.config = self.config
+	}
+	
+	func tappedResetDefault() {
+		self.config = Config()
+		tableView.reloadData()
+		Defaults.shared.config = Config()
+	}
+	
 	func sliderDidUpdateValue(_ value: Float, sender: SingleSliderTableViewCell) {
 		guard let indexPathSection = tableView.indexPath(for: sender)?.section,
 			let section = Section(rawValue: indexPathSection) else {
@@ -123,6 +143,7 @@ private enum Section: Int {
 	case backgroundColor
 	case size
 	case number
+	case defaults
 	
 	init?(header: String) {
 		for section in Section.all() {
@@ -144,6 +165,8 @@ private enum Section: Int {
 			return "size"
 		case .number:
 			return "max number (may affect performance)"
+		default:
+			return ""
 		}
 	}
 	
@@ -151,6 +174,7 @@ private enum Section: Int {
 		return [.asteroidColor,
 				.backgroundColor,
 				.size,
-				.number]
+				.number,
+				.defaults]
 	}
 }

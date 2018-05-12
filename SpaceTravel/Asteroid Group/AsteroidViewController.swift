@@ -10,7 +10,7 @@ class AsteroidViewController: UIViewController {
 	var shouldContinueCreatingAsteroids: Bool {
 		return reuseAsteroidViews.count < config.maxNumberOfAsteroids
 	}
-	var config = Config()
+	var config = Defaults.shared.config
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
