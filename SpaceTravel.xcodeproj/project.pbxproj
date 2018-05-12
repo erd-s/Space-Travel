@@ -17,7 +17,7 @@
 		0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7C20A73D7700996663 /* SliderConfig.swift */; };
 		9B265AE82087AAB100DB540B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE72087AAB100DB540B /* AppDelegate.swift */; };
 		9B265AEA2087AAB100DB540B /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE92087AAB100DB540B /* AsteroidViewController.swift */; };
-		9B265AED2087AAB100DB540B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEB2087AAB100DB540B /* Main.storyboard */; };
+		9B265AED2087AAB100DB540B /* Asteroids.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEB2087AAB100DB540B /* Asteroids.storyboard */; };
 		9B265AEF2087AAB100DB540B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEE2087AAB100DB540B /* Assets.xcassets */; };
 		9B265AF22087AAB100DB540B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AF02087AAB100DB540B /* LaunchScreen.storyboard */; };
 		9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */; };
@@ -39,7 +39,7 @@
 		9B265AE42087AAB100DB540B /* SpaceTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B265AE72087AAB100DB540B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B265AE92087AAB100DB540B /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
-		9B265AEC2087AAB100DB540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B265AEC2087AAB100DB540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Asteroids.storyboard; sourceTree = "<group>"; };
 		9B265AEE2087AAB100DB540B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B265AF12087AAB100DB540B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B265AF32087AAB100DB540B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +64,8 @@
 		0C76A419208D0F3100F334C0 /* Asteroid Group */ = {
 			isa = PBXGroup;
 			children = (
+				9B265AEB2087AAB100DB540B /* Asteroids.storyboard */,
+				9B265AE92087AAB100DB540B /* AsteroidViewController.swift */,
 				9B265AF92087AAC500DB540B /* AsteroidGenerator.swift */,
 				9B265AFF2087AD8700DB540B /* AsteroidView.swift */,
 				9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */,
@@ -83,16 +85,24 @@
 		0CB09A6B20A7351A00996663 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				0CB09A7E20A74A0500996663 /* UILayer */,
 				0CB09A7C20A73D7700996663 /* SliderConfig.swift */,
-				0CB09A6E20A736CC00996663 /* ConfigViewController.swift */,
-				0CB09A7220A738B100996663 /* ConfigDataSource.swift */,
 				0CB09A6C20A7353900996663 /* Config.swift */,
-				0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */,
-				0CB09A7820A73BCB00996663 /* SingleSliderTableViewCell.swift */,
-				0CB09A7420A738DF00996663 /* Config.storyboard */,
-				0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0CB09A7E20A74A0500996663 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				0CB09A7420A738DF00996663 /* Config.storyboard */,
+				0CB09A6E20A736CC00996663 /* ConfigViewController.swift */,
+				0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */,
+				0CB09A7220A738B100996663 /* ConfigDataSource.swift */,
+				0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */,
+				0CB09A7820A73BCB00996663 /* SingleSliderTableViewCell.swift */,
+			);
+			path = UILayer;
 			sourceTree = "<group>";
 		};
 		9B265ADB2087AAB100DB540B = {
@@ -114,15 +124,13 @@
 		9B265AE62087AAB100DB540B /* SpaceTravel */ = {
 			isa = PBXGroup;
 			children = (
-				0CB09A6B20A7351A00996663 /* Configuration */,
 				9B265AE72087AAB100DB540B /* AppDelegate.swift */,
 				9B265AEE2087AAB100DB540B /* Assets.xcassets */,
 				0C76A419208D0F3100F334C0 /* Asteroid Group */,
+				0CB09A6B20A7351A00996663 /* Configuration */,
 				9B265AF32087AAB100DB540B /* Info.plist */,
 				9B265AF02087AAB100DB540B /* LaunchScreen.storyboard */,
-				9B265AEB2087AAB100DB540B /* Main.storyboard */,
 				0C76A41A208D0F4100F334C0 /* Utility */,
-				9B265AE92087AAB100DB540B /* AsteroidViewController.swift */,
 			);
 			path = SpaceTravel;
 			sourceTree = "<group>";
@@ -189,7 +197,7 @@
 				9B265AF22087AAB100DB540B /* LaunchScreen.storyboard in Resources */,
 				9B265AEF2087AAB100DB540B /* Assets.xcassets in Resources */,
 				0CB09A7520A738DF00996663 /* Config.storyboard in Resources */,
-				9B265AED2087AAB100DB540B /* Main.storyboard in Resources */,
+				9B265AED2087AAB100DB540B /* Asteroids.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,12 +228,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B265AEB2087AAB100DB540B /* Main.storyboard */ = {
+		9B265AEB2087AAB100DB540B /* Asteroids.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9B265AEC2087AAB100DB540B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Asteroids.storyboard;
 			sourceTree = "<group>";
 		};
 		9B265AF02087AAB100DB540B /* LaunchScreen.storyboard */ = {

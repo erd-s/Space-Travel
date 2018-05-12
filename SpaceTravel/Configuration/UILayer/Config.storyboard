@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vzm-pn-Wbu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FpI-W6-HW1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-2a-svm">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-2a-svm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="singleSlider" rowHeight="91" id="UVQ-6h-deH" customClass="SingleSliderTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
@@ -161,21 +161,63 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-d7-H6V">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iNN-do-KXw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Vzm-pn-Wbu" eventType="touchUpInside" id="zTK-MQ-pGN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pH6-2a-svm" firstAttribute="top" secondItem="Kz2-7P-9sV" secondAttribute="top" id="5gC-6a-2Sf"/>
-                            <constraint firstItem="Kz2-7P-9sV" firstAttribute="bottom" secondItem="pH6-2a-svm" secondAttribute="bottom" id="YQc-9E-VHk"/>
+                            <constraint firstItem="Kz2-7P-9sV" firstAttribute="bottom" secondItem="T5s-d7-H6V" secondAttribute="bottom" id="F36-Xy-JNo"/>
+                            <constraint firstItem="T5s-d7-H6V" firstAttribute="top" secondItem="pH6-2a-svm" secondAttribute="bottom" id="Q5l-Vj-5sR"/>
+                            <constraint firstItem="T5s-d7-H6V" firstAttribute="leading" secondItem="Kz2-7P-9sV" secondAttribute="leading" id="ZJ7-rL-ffM"/>
                             <constraint firstItem="pH6-2a-svm" firstAttribute="leading" secondItem="Kz2-7P-9sV" secondAttribute="leading" id="amh-nT-V0C"/>
                             <constraint firstItem="Kz2-7P-9sV" firstAttribute="trailing" secondItem="pH6-2a-svm" secondAttribute="trailing" id="eTo-36-WmI"/>
+                            <constraint firstItem="Kz2-7P-9sV" firstAttribute="trailing" secondItem="T5s-d7-H6V" secondAttribute="trailing" id="pVQ-sA-sMW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kz2-7P-9sV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iUE-o5-jHl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mZ4-yQ-xMC">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Vzm-pn-Wbu" id="Nca-dp-1sp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="configTableView" destination="pH6-2a-svm" id="xyq-n1-Xi8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-y5-iaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="181.25937031484258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0kb-Hw-Eah">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpI-W6-HW1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bmY-gI-rLN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vzm-pn-Wbu" kind="relationship" relationship="rootViewController" id="1Dn-w7-Arb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9J-eA-7e1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="520.79999999999995" y="181.25937031484258"/>
         </scene>
