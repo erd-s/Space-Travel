@@ -26,7 +26,7 @@ class ColorSelectionTableViewCell: UITableViewCell {
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		setupForSliders()
+		setup()
 	}
 	
 	func configure(headerText: String, delegate: ColorSelectionDelegate?, color: UIColor) {
@@ -35,18 +35,21 @@ class ColorSelectionTableViewCell: UITableViewCell {
 		
 		self.colorView.backgroundColor = color
 		
-		self.redSlider.value = Float(color.components.red)
-		self.blueSlider.value = Float(color.components.blue)
-		self.greenSlider.value = Float(color.components.green)
+		self.redSlider.value = Float(color.components.red * 255)
+		self.blueSlider.value = Float(color.components.blue * 255)
+		self.greenSlider.value = Float(color.components.green * 255)
 	}
 	
-	func setupForSliders() {
+	func setup() {
 		redSlider.minimumValue = 1
 		redSlider.maximumValue = 255
 		greenSlider.minimumValue = 1
 		greenSlider.maximumValue = 255
 		blueSlider.minimumValue = 1
 		blueSlider.maximumValue = 255
+		
+		colorView.layer.borderColor = UIColor.black.cgColor.copy(alpha: 0.5)
+		colorView.layer.borderWidth = 0.5
 	}
 	
 	@IBAction func sliderValueChanged(_ sender: UISlider) {
