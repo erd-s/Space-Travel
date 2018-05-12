@@ -8,7 +8,7 @@ Using CoreAnimation to simulate a space traveling experience.
 
 ### Features on Deck
 Modal popup that allows for configuration of the following:<br>
-  - [ ] number of asteroids<br>
-  - [ ] speed of asteroids<br>
-  - [ ] color of asteroids<br>
-  - [ ] color of background<br>
+  - [x] number of asteroids<br>
+  - [x] number of asteroids<br>
+  - [x] color of asteroids<br>
+  - [x] color of background<br>
