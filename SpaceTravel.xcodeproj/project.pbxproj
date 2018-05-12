@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CB09A6D20A7353900996663 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A6C20A7353900996663 /* Config.swift */; };
+		0CB09A7020A736CC00996663 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A6E20A736CC00996663 /* ConfigViewController.swift */; };
+		0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7220A738B100996663 /* ConfigDataSource.swift */; };
+		0CB09A7520A738DF00996663 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB09A7420A738DF00996663 /* Config.storyboard */; };
+		0CB09A7720A73BC400996663 /* ColorSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */; };
+		0CB09A7920A73BCB00996663 /* SingleSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7820A73BCB00996663 /* SingleSliderTableViewCell.swift */; };
+		0CB09A7B20A73D0800996663 /* ConfigHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */; };
+		0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7C20A73D7700996663 /* SliderConfig.swift */; };
 		9B265AE82087AAB100DB540B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE72087AAB100DB540B /* AppDelegate.swift */; };
 		9B265AEA2087AAB100DB540B /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE92087AAB100DB540B /* AsteroidViewController.swift */; };
 		9B265AED2087AAB100DB540B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEB2087AAB100DB540B /* Main.storyboard */; };
@@ -20,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CB09A6C20A7353900996663 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0CB09A6E20A736CC00996663 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		0CB09A7220A738B100996663 /* ConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigDataSource.swift; sourceTree = "<group>"; };
+		0CB09A7420A738DF00996663 /* Config.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
+		0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		0CB09A7820A73BCB00996663 /* SingleSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSliderTableViewCell.swift; sourceTree = "<group>"; };
+		0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigHeaderLabel.swift; sourceTree = "<group>"; };
+		0CB09A7C20A73D7700996663 /* SliderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderConfig.swift; sourceTree = "<group>"; };
 		9B265AE42087AAB100DB540B /* SpaceTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B265AE72087AAB100DB540B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B265AE92087AAB100DB540B /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +80,21 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		0CB09A6B20A7351A00996663 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0CB09A7C20A73D7700996663 /* SliderConfig.swift */,
+				0CB09A6E20A736CC00996663 /* ConfigViewController.swift */,
+				0CB09A7220A738B100996663 /* ConfigDataSource.swift */,
+				0CB09A6C20A7353900996663 /* Config.swift */,
+				0CB09A7620A73BC400996663 /* ColorSelectionTableViewCell.swift */,
+				0CB09A7820A73BCB00996663 /* SingleSliderTableViewCell.swift */,
+				0CB09A7420A738DF00996663 /* Config.storyboard */,
+				0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		9B265ADB2087AAB100DB540B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +114,7 @@
 		9B265AE62087AAB100DB540B /* SpaceTravel */ = {
 			isa = PBXGroup;
 			children = (
+				0CB09A6B20A7351A00996663 /* Configuration */,
 				9B265AE72087AAB100DB540B /* AppDelegate.swift */,
 				9B265AEE2087AAB100DB540B /* Assets.xcassets */,
 				0C76A419208D0F3100F334C0 /* Asteroid Group */,
@@ -156,6 +188,7 @@
 			files = (
 				9B265AF22087AAB100DB540B /* LaunchScreen.storyboard in Resources */,
 				9B265AEF2087AAB100DB540B /* Assets.xcassets in Resources */,
+				0CB09A7520A738DF00996663 /* Config.storyboard in Resources */,
 				9B265AED2087AAB100DB540B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,8 +205,15 @@
 				9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */,
 				9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */,
 				9BBE067220892EE20077AE87 /* ScreenConstants.swift in Sources */,
+				0CB09A6D20A7353900996663 /* Config.swift in Sources */,
+				0CB09A7B20A73D0800996663 /* ConfigHeaderLabel.swift in Sources */,
+				0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */,
+				0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */,
+				0CB09A7720A73BC400996663 /* ColorSelectionTableViewCell.swift in Sources */,
 				9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */,
 				9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */,
+				0CB09A7920A73BCB00996663 /* SingleSliderTableViewCell.swift in Sources */,
+				0CB09A7020A736CC00996663 /* ConfigViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,6 @@ class AsteroidViewController: UIViewController {
 			}
 		}
 	}
-	
 
 	func restartAnimationOnAsteroids(number: Int) {
 		let startIndex = self.asteroidViewsAnimationIndex
