@@ -9,10 +9,22 @@
 import Foundation
 import UIKit
 
-struct Config {
-	let asteroidColor: UIColor = .white
-	let backgroundColor: UIColor = .black
-	let animationDuration: Double = 3
-	let asteroidSize: (min: CGFloat, max: CGFloat) = (0, 6)
-	let maxNumberOfAsteroids: Int = 1000
+class Config {
+	var asteroidColor: UIColor = .white
+	var backgroundColor: UIColor = .black
+	var animationDuration: Double = 3
+	var asteroidMaxSize: CGFloat = 6
+	var maxNumberOfAsteroids: Int = 1000
+	
+	static func getAsteroidSizeMinMax() -> (min: Float, max: Float) {
+		return (0, 12)
+	}
+
+	static func getNumberMinMax() -> (min: Float, max: Float) {
+		return (100, 10000)
+	}
+	
+	static func getDurationMinMax() -> (min: Float, max: Float) {
+		return (1, 10)
+	}
 }

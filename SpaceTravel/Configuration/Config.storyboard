@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vzm-pn-Wbu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="91" id="UVQ-6h-deH" customClass="SingleSliderTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="singleSlider" rowHeight="91" id="UVQ-6h-deH" customClass="SingleSliderTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UVQ-6h-deH" id="21M-CX-wmO">
@@ -61,7 +61,7 @@
                                             <outlet property="slider" destination="DYt-V7-zg7" id="NLa-4L-wqE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="194" id="eUT-3k-mdo" customClass="ColorSelectionTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorSelection" rowHeight="194" id="eUT-3k-mdo" customClass="ColorSelectionTableViewCell" customModule="SpaceTravel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="146.5" width="375" height="194"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eUT-3k-mdo" id="x9Y-6O-RQ4">
@@ -171,6 +171,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kz2-7P-9sV"/>
                     </view>
+                    <connections>
+                        <outlet property="configTableView" destination="pH6-2a-svm" id="xyq-n1-Xi8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XF-y5-iaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

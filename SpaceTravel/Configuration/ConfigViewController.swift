@@ -9,9 +9,26 @@
 import UIKit
 
 class ConfigViewController: UIViewController {
+	var configDataSource: ConfigDataSource?
+	var config: Config?
+	
+	@IBOutlet weak var configTableView: UITableView!
+	
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		setup()
+	}
+	
+	func setup() {
+		guard let config = config else { return }
+		configDataSource = ConfigDataSource(config: config, tableView: configTableView, delegate: self)
+	}
+}
 
+extension ConfigViewController: ConfigDataSourceDelegate {
+	func didUpdateConfig(config: Config) {
+		self.config = config
 	}
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SingleSliderSelectionDelegate: class {
-	func sliderDidUpdateValue(_ value: Float)
+	func sliderDidUpdateValue(_ value: Float, sender: SingleSliderTableViewCell)
 }
 
 class SingleSliderTableViewCell: UITableViewCell {
@@ -20,7 +20,7 @@ class SingleSliderTableViewCell: UITableViewCell {
 	@IBOutlet weak var slider: UISlider!
 	
 	
-	func configure(headerText: String, sliderConfig: SliderConfig, delegate: SingleSliderSelectionDelegate) {
+	func configure(headerText: String, sliderConfig: SliderConfig, delegate: SingleSliderSelectionDelegate?) {
 		
 		slider.maximumValue = sliderConfig.max
 		slider.minimumValue = sliderConfig.min
@@ -31,6 +31,6 @@ class SingleSliderTableViewCell: UITableViewCell {
 	}
 	
 	@IBAction func sliderValueChanged(_ sender: UISlider) {
-		delegate?.sliderDidUpdateValue(sender.value)
+		delegate?.sliderDidUpdateValue(sender.value, sender: self)
 	}
 }

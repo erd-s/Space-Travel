@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ColorSelectionDelegate: class {
-	func didUpdateColor(_ color: UIColor)
+	func didUpdateColor(_ color: UIColor, sender: ColorSelectionTableViewCell)
 }
 
 class ColorSelectionTableViewCell: UITableViewCell {
@@ -29,7 +29,7 @@ class ColorSelectionTableViewCell: UITableViewCell {
 		setupForSliders()
 	}
 	
-	func configure(headerText: String, delegate: ColorSelectionDelegate) {
+	func configure(headerText: String, delegate: ColorSelectionDelegate?) {
 		self.headerLabel.text = headerText
 		self.delegate = delegate
 	}
@@ -54,6 +54,6 @@ class ColorSelectionTableViewCell: UITableViewCell {
 							alpha: 1)
 		
 		colorView.backgroundColor = color
-		delegate?.didUpdateColor(color)
+		delegate?.didUpdateColor(color, sender: self)
 	}
 }
