@@ -11,6 +11,6 @@ import Foundation
 struct SliderConfig {
 	let min: Float
 	let max: Float
-	let increment: Float = 1
+	var increment: Int = 1
 	let value: Float
 }

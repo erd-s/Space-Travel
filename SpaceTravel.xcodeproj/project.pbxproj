@@ -16,6 +16,7 @@
 		0CB09A7B20A73D0800996663 /* ConfigHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */; };
 		0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7C20A73D7700996663 /* SliderConfig.swift */; };
 		0CB09A8020A7519700996663 /* UIColor+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A7F20A7519700996663 /* UIColor+Components.swift */; };
+		0CB09A8220A75B7000996663 /* Float+RoundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB09A8120A75B7000996663 /* Float+RoundTo.swift */; };
 		9B265AE82087AAB100DB540B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE72087AAB100DB540B /* AppDelegate.swift */; };
 		9B265AEA2087AAB100DB540B /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AE92087AAB100DB540B /* AsteroidViewController.swift */; };
 		9B265AED2087AAB100DB540B /* Asteroids.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B265AEB2087AAB100DB540B /* Asteroids.storyboard */; };
@@ -38,6 +39,7 @@
 		0CB09A7A20A73D0800996663 /* ConfigHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigHeaderLabel.swift; sourceTree = "<group>"; };
 		0CB09A7C20A73D7700996663 /* SliderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderConfig.swift; sourceTree = "<group>"; };
 		0CB09A7F20A7519700996663 /* UIColor+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Components.swift"; sourceTree = "<group>"; };
+		0CB09A8120A75B7000996663 /* Float+RoundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+RoundTo.swift"; sourceTree = "<group>"; };
 		9B265AE42087AAB100DB540B /* SpaceTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B265AE72087AAB100DB540B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B265AE92087AAB100DB540B /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				9B265B012087DB0E00DB540B /* RefreshTimer.swift */,
 				9BBE067120892EE20077AE87 /* ScreenConstants.swift */,
 				0CB09A7F20A7519700996663 /* UIColor+Components.swift */,
+				0CB09A8120A75B7000996663 /* Float+RoundTo.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */,
 				0CB09A8020A7519700996663 /* UIColor+Components.swift in Sources */,
 				0CB09A7D20A73D7700996663 /* SliderConfig.swift in Sources */,
+				0CB09A8220A75B7000996663 /* Float+RoundTo.swift in Sources */,
 				0CB09A7720A73BC400996663 /* ColorSelectionTableViewCell.swift in Sources */,
 				9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */,
 				9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */,

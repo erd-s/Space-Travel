@@ -68,12 +68,14 @@ class ConfigDataSource: NSObject, UITableViewDataSource {
 		switch section {
 		case .size:
 			return SliderConfig(min: Config.getAsteroidSizeMinMax().min,
-										max: Config.getAsteroidSizeMinMax().max,
-										value: Float(config.asteroidMaxSize))
+								max: Config.getAsteroidSizeMinMax().max,
+								increment: 1,
+								value: Float(config.asteroidMaxSize))
 		case .number:
 			return SliderConfig(min: Config.getNumberMinMax().min,
-										max: Config.getNumberMinMax().max,
-										value: Float(config.maxNumberOfAsteroids))
+								max: Config.getNumberMinMax().max,
+								increment: 500,
+								value: Float(config.maxNumberOfAsteroids))
 		default:
 			assertionFailure("should not be hitting default if section != above")
 		}
@@ -141,7 +143,7 @@ private enum Section: Int {
 		case .size:
 			return "size"
 		case .number:
-			return "max number"
+			return "max number (may affect performance)"
 		}
 	}
 	

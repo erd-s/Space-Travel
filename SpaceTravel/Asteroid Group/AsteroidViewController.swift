@@ -21,7 +21,7 @@ class AsteroidViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		let msFor60fps: Int = 17
-		startAddAsteroidTimerAdding(numberOfAsteroids: 2, every: msFor60fps)
+		startAddAsteroidTimerAdding(numberOfAsteroids: config.maxNumberOfAsteroids / 500, every: msFor60fps)
 		UIView.animate(withDuration: 0.3) {
 			self.view.backgroundColor = self.config.backgroundColor
 		}

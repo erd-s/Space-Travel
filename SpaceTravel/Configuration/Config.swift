@@ -16,10 +16,10 @@ class Config {
 	var maxNumberOfAsteroids: Int = 1000
 	
 	static func getAsteroidSizeMinMax() -> (min: Float, max: Float) {
-		return (0, 15)
+		return (3, 15)
 	}
 
 	static func getNumberMinMax() -> (min: Float, max: Float) {
-		return (100, 50000)
+		return (100, 10000)
 	}
 }

@@ -15,22 +15,26 @@ protocol SingleSliderSelectionDelegate: class {
 class SingleSliderTableViewCell: UITableViewCell {
 	static let reuseID = "singleSlider"
 	weak var delegate: SingleSliderSelectionDelegate?
+	var sliderIncrementValue: Int = 1
 	
 	@IBOutlet weak var headerLabel: UILabel!
 	@IBOutlet weak var slider: UISlider!
 	
-	
 	func configure(headerText: String, sliderConfig: SliderConfig, delegate: SingleSliderSelectionDelegate?) {
-		
 		slider.maximumValue = sliderConfig.max
 		slider.minimumValue = sliderConfig.min
 		slider.value = sliderConfig.value
+		sliderIncrementValue = sliderConfig.increment
 		
-		self.headerLabel.text = headerText
+		headerLabel.text = headerText
+		
 		self.delegate = delegate
 	}
 	
 	@IBAction func sliderValueChanged(_ sender: UISlider) {
-		delegate?.sliderDidUpdateValue(sender.value, sender: self)
+		let rounded = sender.value.roundToNearest(sliderIncrementValue)
+		sender.value = rounded
+		print("roundedvalue = \(sender.value)")
+		delegate?.sliderDidUpdateValue(rounded, sender: self)
 	}
 }
