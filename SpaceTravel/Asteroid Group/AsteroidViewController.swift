@@ -15,7 +15,7 @@ class AsteroidViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .black
-		addLongPressToOpenConfig()
+		addDoubleTapToOpenConfig()
 		config = Defaults.shared.config
 	}
 	
@@ -91,10 +91,11 @@ class AsteroidViewController: UIViewController {
 
 //MARK: Configuration
 extension AsteroidViewController: ConfigViewControllerDelegate, UIGestureRecognizerDelegate {
-	func addLongPressToOpenConfig() {
-		let longPress = UILongPressGestureRecognizer(target: self, action: #selector(openConfig))
-		longPress.delegate = self
-		view.addGestureRecognizer(longPress)
+	func addDoubleTapToOpenConfig() {
+		let doubleTap = UITapGestureRecognizer(target: self, action: #selector(openConfig))
+		doubleTap.delegate = self
+		doubleTap.numberOfTapsRequired = 2
+		view.addGestureRecognizer(doubleTap)
 	}
 		
 	@objc func openConfig() {
