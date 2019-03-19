@@ -28,7 +28,7 @@
 		9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */; };
 		9B265B002087AD8700DB540B /* AsteroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265AFF2087AD8700DB540B /* AsteroidView.swift */; };
 		9B265B022087DB0E00DB540B /* RefreshTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B265B012087DB0E00DB540B /* RefreshTimer.swift */; };
-		9BBE067220892EE20077AE87 /* ScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE067120892EE20077AE87 /* ScreenConstants.swift */; };
+		9BBE067220892EE20077AE87 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE067120892EE20077AE87 /* Screen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		9B265AFB2087AACB00DB540B /* AsteroidAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidAnimator.swift; sourceTree = "<group>"; };
 		9B265AFF2087AD8700DB540B /* AsteroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidView.swift; sourceTree = "<group>"; };
 		9B265B012087DB0E00DB540B /* RefreshTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimer.swift; sourceTree = "<group>"; };
-		9BBE067120892EE20077AE87 /* ScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenConstants.swift; sourceTree = "<group>"; };
+		9BBE067120892EE20077AE87 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				9B265B012087DB0E00DB540B /* RefreshTimer.swift */,
-				9BBE067120892EE20077AE87 /* ScreenConstants.swift */,
+				9BBE067120892EE20077AE87 /* Screen.swift */,
 				0CB09A7F20A7519700996663 /* UIColor+Components.swift */,
 				0CB09A8120A75B7000996663 /* Float+RoundTo.swift */,
 				0CB09A8420A75D3F00996663 /* Defaults.swift */,
@@ -224,7 +224,7 @@
 				9B265AE82087AAB100DB540B /* AppDelegate.swift in Sources */,
 				9B265AFA2087AAC500DB540B /* AsteroidGenerator.swift in Sources */,
 				9B265AFC2087AACB00DB540B /* AsteroidAnimator.swift in Sources */,
-				9BBE067220892EE20077AE87 /* ScreenConstants.swift in Sources */,
+				9BBE067220892EE20077AE87 /* Screen.swift in Sources */,
 				0CB09A6D20A7353900996663 /* Config.swift in Sources */,
 				0CB09A7B20A73D0800996663 /* ConfigHeaderLabel.swift in Sources */,
 				0CB09A7320A738B100996663 /* ConfigDataSource.swift in Sources */,

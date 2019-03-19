@@ -50,21 +50,21 @@ class AsteroidAnimator: NSObject {
 	private func getDirectionFromCenter() -> CGVector {
 		let randomPosition = generateRandomNonCenterPoint()
 		
-		let dx = randomPosition.x - ScreenConstants.shared.screenCenter.x
-		let dy = randomPosition.y - ScreenConstants.shared.screenCenter.y
+		let dx = randomPosition.x - Screen.center.x
+		let dy = randomPosition.y - Screen.center.y
 		return CGVector(dx: dx, dy: dy)
 	}
 	
 	private func generateRandomNonCenterPoint() -> CGPoint {
-		let widthRange = Int(ScreenConstants.shared.screenWidth)
+		let widthRange = Int(Screen.width)
 		let randomX: CGFloat = CGFloat(integerLiteral: Int.random(in: (widthRange * -1)...widthRange))
 
-		let heightRange = Int(ScreenConstants.shared.screenHeight)
+		let heightRange = Int(Screen.height)
 		let randomY: CGFloat = CGFloat(integerLiteral: Int.random(in: (heightRange * -1)...heightRange))
 
 		let randomPoint = CGPoint(x: randomX, y: randomY)
 		
-		guard randomPoint != ScreenConstants.shared.screenCenter else {
+		guard randomPoint != Screen.center else {
 			return generateRandomNonCenterPoint()
 		}
 		
