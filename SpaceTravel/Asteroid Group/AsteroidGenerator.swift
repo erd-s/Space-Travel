@@ -5,7 +5,6 @@ import Foundation
 import UIKit
 
 struct AsteroidGenerator {
-	
 	static func createAsteroidViews(number: Int, color: UIColor, maxSize: CGFloat) -> [AsteroidView] {
 		let asteroids = createRandomAsteroids(number: number, maxSize: maxSize)
 		var asteroidViews: [AsteroidView] = []
@@ -20,11 +19,14 @@ struct AsteroidGenerator {
 	
 	private static func createRandomAsteroids(number: Int, maxSize: CGFloat) -> [Asteroid] {
 		var asteroids: [Asteroid] = []
-		for _ in 0...number {
+
+		while asteroids.count < number {
 			let position = CGPoint(x: UIScreen.main.bounds.midX,
 									  y: UIScreen.main.bounds.midY)
-		
-			let randomRadius: CGFloat = CGFloat(arc4random_uniform(UInt32(maxSize) * 1000)) / 1000.0
+			let granularity: Int = 1000
+			let randomMaxWithGranularity: Int = Int(maxSize) * granularity
+			let randomRadiusBy1000: Int = Int.random(in: 0...randomMaxWithGranularity)
+			let randomRadius: CGFloat = CGFloat(integerLiteral: randomRadiusBy1000 / granularity)
 		
 			let asteroid = Asteroid(radius: randomRadius, position: position)
 			asteroids.append(asteroid)

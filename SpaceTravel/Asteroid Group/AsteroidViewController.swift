@@ -10,19 +10,18 @@ class AsteroidViewController: UIViewController {
 	var shouldContinueCreatingAsteroids: Bool {
 		return reuseAsteroidViews.count < config.maxNumberOfAsteroids
 	}
-	var config: Config = Config()
+	var config: Config = Defaults.shared.config
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .black
 		addDoubleTapToOpenConfig()
-		config = Defaults.shared.config
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		let msFor60fps: Int = 17
-		startAddAsteroidTimerAdding(numberOfAsteroids: config.maxNumberOfAsteroids / 500, every: msFor60fps)
+		startAddAsteroidTimerAdding(numberOfAsteroids: config.maxNumberOfAsteroids / 250, every: msFor60fps)
 		UIView.animate(withDuration: 0.3) {
 			self.view.backgroundColor = self.config.backgroundColor
 		}
@@ -49,11 +48,8 @@ class AsteroidViewController: UIViewController {
 		let range = startIndex...endIndex
 		var viewsToAnimate: [AsteroidView] = []
 		
-		for viewIndex in range {
-			let viewToAnimate = reuseAsteroidViews[viewIndex]
-			if viewToAnimate.readyToReanimate {
-				viewsToAnimate.append(viewToAnimate)
-			}
+		for viewIndex in range where reuseAsteroidViews[viewIndex].readyToReanimate {
+			viewsToAnimate.append(reuseAsteroidViews[viewIndex])
 		}
 		
 		animateAsteroidsOut(asteroidViews: viewsToAnimate)

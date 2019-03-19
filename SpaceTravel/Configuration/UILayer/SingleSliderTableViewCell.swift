@@ -34,7 +34,6 @@ class SingleSliderTableViewCell: UITableViewCell {
 	@IBAction func sliderValueChanged(_ sender: UISlider) {
 		let rounded = sender.value.roundToNearest(sliderIncrementValue)
 		sender.value = rounded
-		print("roundedvalue = \(sender.value)")
 		delegate?.sliderDidUpdateValue(rounded, sender: self)
 	}
 }

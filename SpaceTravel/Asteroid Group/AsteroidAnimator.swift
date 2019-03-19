@@ -6,6 +6,8 @@ import UIKit
 
 class AsteroidAnimator: NSObject {
 	static let shared = AsteroidAnimator()
+
+	private override init() { }
 	
 	func animateAstroidOffScreen(asteroidView: AsteroidView, duration animationDuration: Double) {
 		asteroidView.readyToReanimate = false
@@ -54,21 +56,12 @@ class AsteroidAnimator: NSObject {
 	}
 	
 	private func generateRandomNonCenterPoint() -> CGPoint {
-		let shouldInvertX = arc4random_uniform(1) == 1 ? true : false
-		let shouldInvertY = arc4random_uniform(1) == 1 ? true : false
-		
-		var randomX: CGFloat = CGFloat(arc4random_uniform(ScreenConstants.shared.screenWidthUInt32))
-		var randomY: CGFloat = CGFloat(arc4random_uniform(ScreenConstants.shared.screenHeightUInt32))
-		
-		
-		if shouldInvertX {
-			randomX = randomX * -1
-		}
-		
-		if shouldInvertY {
-			randomY = randomY * -1
-		}
-		
+		let widthRange = Int(ScreenConstants.shared.screenWidth)
+		let randomX: CGFloat = CGFloat(integerLiteral: Int.random(in: (widthRange * -1)...widthRange))
+
+		let heightRange = Int(ScreenConstants.shared.screenHeight)
+		let randomY: CGFloat = CGFloat(integerLiteral: Int.random(in: (heightRange * -1)...heightRange))
+
 		let randomPoint = CGPoint(x: randomX, y: randomY)
 		
 		guard randomPoint != ScreenConstants.shared.screenCenter else {
